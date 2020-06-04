@@ -1,0 +1,43 @@
+﻿@model Table
+@{
+    var title = "CREATE Teacher";
+    ViewData["Title"] = title;
+    Layout = "_Layout";
+
+}
+
+<h2>
+    @title
+</h2>
+<style>
+    .input-validation-error {
+        border-color: red;
+    }
+</style>
+<script href="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script href="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.17.0/jquery.validate.min.js"></script>
+<script href="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<form class="m-1 p-1" method="post" action="Create_Post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Skills"></label>
+        <input asp-for="Skills" type="text" class="form-control" />
+        <span asp-validation-for="Skills" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="TotalStudents"></label>
+        <input asp-for="TotalStudents" type="text" class="form-control" />
+        <span asp-validation-for="TotalStudents" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Salary"></label>
+        <input asp-for="Salary" type="text" class="form-control" />
+        <span asp-validation-for="Salary" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
